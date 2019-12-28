@@ -1,0 +1,55 @@
+{
+    "name": "tematech/alice-notify",
+    "description": "Laravel notification for alice",
+    "keywords": [
+        "tematech",
+        "alice-notify"
+    ],
+    "homepage": "https://github.com/tematech/alice-notify",
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Gildas Tema",
+            "email": "gildastema3@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.2",
+        "illuminate/support": "^6.2",
+        "symfony/http-client": "^5.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "4.*",
+        "phpunit/phpunit": "^8.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Tematech\\AliceNotify\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tematech\\AliceNotify\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Tematech\\AliceNotify\\AliceNotifyServiceProvider"
+            ],
+            "aliases": {
+                "AliceNotify": "Tematech\\AliceNotify\\AliceNotifyFacade"
+            }
+        }
+    }
+}
