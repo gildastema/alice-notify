@@ -19,7 +19,7 @@ class AliceNotifyTest extends TestCase
         $notification = new AliceNotificationTest;
         $notifiable = new AliceNotifiableTest;
         $channel = new AliceNotifyChannel();
-        AliceNotifyFacade::shouldReceive('send')->with('237691131446@c.us', 'cool!!!')->andReturn(true);
+        AliceNotifyFacade::shouldReceive('send')->with('237691131446@c.us', 'cool')->andReturn(true);
         $channel->send($notifiable, $notification);
     }
 }
@@ -39,7 +39,7 @@ class AliceNotificationTest extends Notification
     public function toAlice($notifiable)
     {
         return [
-            'message' => 'cool!!!'
+            'message' => 'cool'
         ];
     }
 }
